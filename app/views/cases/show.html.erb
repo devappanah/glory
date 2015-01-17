@@ -1,0 +1,11 @@
+<div class='container'>
+  <%= div_for @case do %>
+    <%= @case.name %>
+    <%= @case.appointment %>
+    <%= @case.notes %>
+  <% end %>
+
+  <%= link_to 'Home', cases_path %>
+  <%= link_to 'Edit', edit_case_path %>
+  <%= link_to 'Delete', case_path, method: :delete, data: { confirm: "Are you sure?" } %>
+</div>

@@ -1,0 +1,8 @@
+<div class='container'>
+  <% @cases.each do |c| %>
+    <%= link_to c.name, case_path(c) %>
+    <br />
+  <% end %>
+
+  <%= link_to 'New Case', new_case_path %>
+</div>  

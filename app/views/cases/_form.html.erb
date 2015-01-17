@@ -1,0 +1,19 @@
+<%= simple_form_for @case do |f| %>
+  <div class='row'>
+    <div class='col-md-6'>
+      <%= f.input :name, label: "Case name" %>
+      <%= f.input :appointment, as: :date, label: "Appointment" %>
+      <%= f.input :notes, label: "Description/Notes" %>
+      
+    </div>
+    <div class='col-md-6'>
+      <%= f.simple_fields_for :treatments do |treatment| %>
+        <%= render 'treatment_fields', f: treatment %>
+      <% end %>
+        <%= link_to_add_association 'Add Treatment', f, :treatments %>
+
+    </div>
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
